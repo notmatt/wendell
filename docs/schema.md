@@ -54,6 +54,6 @@
 | INT         | CHARACTER(8) | TEXT  |
 
 ## Closures Table
-| closure_id | file_name | position | values |
-| ---------- | --------- | -------- | ------ |
-| INT        | TEXT      | TEXT     | TEXT   |
+| closure_id | file_name | function_name | location|
+| ---------- | --------- | ------------- | ------- |
+| INT        | TEXT      | TEXT          | TEXT    |
