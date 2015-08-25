@@ -19,6 +19,7 @@
   "dependencies": {
     "assert-plus": "^0.1.5",
     "bunyan": "^1.4.0",
+    "split": "^1.0.0",
     "sqlite3": "^3.0.10",
     "vstream": "^0.1.0"
   }
