@@ -47,3 +47,10 @@
 | closure_id | file_name | position | values |
 | ---------- | --------- | -------- | ------ |
 | INT        | TEXT      | TEXT     | TEXT   |
+
+
+Edges (1) <-> (1) FooKind
+
+Edges (1) <-> (N) Nodes
+
+Nodes (1) <-> (1) FooKind
