@@ -1,0 +1,25 @@
+{
+  "name": "wendell",
+  "version": "1.0.0",
+  "description": "An experimental SQLite representation of the v8 heap, as discovered via mdb_v8.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notmatt/wendell.git"
+  },
+  "author": "Matthew Smillie, Richard Kiene, Dave Pacheco",
+  "license": "MPL2",
+  "bugs": {
+    "url": "https://github.com/notmatt/wendell/issues"
+  },
+  "homepage": "https://github.com/notmatt/wendell",
+  "dependencies": {
+    "assert-plus": "^0.1.5",
+    "bunyan": "^1.4.0",
+    "sqlite3": "^3.0.10",
+    "vstream": "^0.1.0"
+  }
+}
