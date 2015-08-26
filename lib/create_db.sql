@@ -1,9 +1,12 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
+SELECT 'drop table ' || name || ';' from sqlite_master where type = 'table';
+
 CREATE TABLE `edges` (
 	`edge_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`src_node_id`	INTEGER NOT NULL,
 	`dest_node_id`	INTEGER NOT NULL,
+	`edge_kind_id`	INTEGER NOT NULL,
 	`label`	TEXT NOT NULL
 );
 CREATE TABLE `nodes` (
@@ -26,12 +29,12 @@ CREATE TABLE `objects` (
 CREATE TABLE `arrays` (
 	`array_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`ref_id`	CHAR(8) NOT NULL,
-	`len`	INTEGER NOT NULL
+	`len`	    TEXT NOT NULL
 );
 CREATE TABLE `dates` (
 	`date_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`ref_id`	INTEGER NOT NULL,
-	`date_time`	DATETIME NOT NULL
+	`date_time`	TEXT NOT NULL
 );
 CREATE TABLE `regexes` (
 	`regex_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -41,7 +44,7 @@ CREATE TABLE `regexes` (
 CREATE TABLE `heap_numbers` (
 	`heap_num_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`ref_id`	CHAR(8) NOT NULL,
-	`number`	FLOAT NOT NULL
+	`number`	TEXT NOT NULL
 );
 CREATE TABLE `odd_balls` (
 	`odd_ball_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -55,10 +58,15 @@ CREATE TABLE `closures` (
 	`location`	TEXT NOT NULL,
 	`values`	TEXT NOT NULL
 );
+CREATE TABLE `strings` (
+	`string_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`ref_id`	CHAR(8) NOT NULL,
+	`val`	VARCHAR(32) NOT NULL
+);
 
-INSERT INTO "edge_kinds" VALUES(1,'object property');
-INSERT INTO "edge_kinds" VALUES(2,'array element');
-INSERT INTO "edge_kinds" VALUES(3,'closure variable');
+INSERT INTO "edge_kinds" VALUES(1,'object');
+INSERT INTO "edge_kinds" VALUES(2,'array');
+INSERT INTO "edge_kinds" VALUES(3,'closure');
 
 INSERT INTO "value_kinds" VALUES(1,'object');
 INSERT INTO "value_kinds" VALUES(2,'array');
