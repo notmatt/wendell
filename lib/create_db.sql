@@ -54,9 +54,7 @@ CREATE TABLE `odd_balls` (
 CREATE TABLE `closures` (
 	`closure_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`ref_id`	CHAR(8) NOT NULL,
-	`function_name`	TEXT NOT NULL,
-	`location`	TEXT NOT NULL,
-	`values`	TEXT NOT NULL
+	`val`	TEXT NOT NULL
 );
 CREATE TABLE `strings` (
 	`string_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
