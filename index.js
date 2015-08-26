@@ -10,5 +10,5 @@
 
 var wendell = require('./lib/wendell.js');
 
-// XXX - in? out (backend)? other options?
+// XXX - in? out (backend)? other options? filename?
 var pipeline = wendell(process.stdin);
