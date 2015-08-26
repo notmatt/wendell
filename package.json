@@ -19,7 +19,7 @@
   "dependencies": {
     "assert-plus": "^0.1.5",
     "bunyan": "^1.4.0",
-    "node-neo4j": "^2.0.3",
+    "neo4j-js": "0.0.8",
     "split": "^1.0.0",
     "sqlite3": "2.2.3",
     "vstream": "^0.1.0"
